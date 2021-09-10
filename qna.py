@@ -15,6 +15,8 @@ rest = 0
 
 if res == 1:
     print('your game is starting now , please check your answer first and use all small case')
+    start = input("Press any key to start the game ")
+    del start
     fst_ques = input('What is stand for www ? ')
     if fst_ques == 'world wide web':
         rest += 1
@@ -24,6 +26,12 @@ if res == 1:
     sec_ques = input('What is stand for ip ? ')
     if sec_ques == 'internet protocol':
         rest += 1
+
+nxt_qes()
+
+third_ques = input('What is stand for ftp ? ')
+if third_ques == 'file transfer protocol':
+    rest += 1
 
     print('Thanks for playing the game , Your score is ', rest)
     print('Bye have a nice day!')
