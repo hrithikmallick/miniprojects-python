@@ -27,11 +27,11 @@ if res == 1:
     if sec_ques == 'internet protocol':
         rest += 1
 
-nxt_qes()
+    nxt_qes()
 
-third_ques = input('What is stand for ftp ? ')
-if third_ques == 'file transfer protocol':
-    rest += 1
+    third_ques = input('What is stand for ftp ? ')
+    if third_ques == 'file transfer protocol':
+        rest += 1
 
     print('Thanks for playing the game , Your score is ', rest)
     print('Bye have a nice day!')
