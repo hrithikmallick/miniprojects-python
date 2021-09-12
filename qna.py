@@ -18,19 +18,19 @@ if res == 1:
     start = input("Press any key to start the game ")
     del start
     fst_ques = input('What is stand for www ? ')
-    if fst_ques == 'world wide web':
+    if fst_ques.lower() == 'world wide web':
         rest += 1
 
     nxt_qes()
 
     sec_ques = input('What is stand for ip ? ')
-    if sec_ques == 'internet protocol':
+    if sec_ques.lower() == 'internet protocol':
         rest += 1
 
     nxt_qes()
 
     third_ques = input('What is stand for ftp ? ')
-    if third_ques == 'file transfer protocol':
+    if third_ques.lower() == 'file transfer protocol':
         rest += 1
 
     print('Thanks for playing the game , Your score is ', rest)
