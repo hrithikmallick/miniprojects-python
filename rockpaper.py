@@ -15,6 +15,9 @@ while True:
               bot_win, 'time in ', gusees-1, ' attempts')
         quit()
 
+    if user_inp not in game:
+        continue
+
     random_number = random.randint(0, 2)
     if user_inp == 'rock' and game[random_number] == 'scissers':
         user_win += 1
