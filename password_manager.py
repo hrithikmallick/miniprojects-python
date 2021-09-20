@@ -1,4 +1,5 @@
 from cryptography.fernet import Fernet
+import random
 
 # only run at starting at program to generate the key
 # def write_key():
@@ -43,6 +44,21 @@ def view():
             print("Name: "+decryp(name)+" Userid: " +
                   decryp(userid)+" Password: "+decryp(password))
 
+# generate password
+
+
+def generatepass():
+    passw = ""
+    strng = "ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$&%-_" + \
+        "abcdefghijklmnopqrstuvwxyz0123456789@#$&%-_"
+    i = 0
+    while i <= 16:
+        i += 1
+        rand = random.randrange(0, len(strng))
+        passw += strng[rand]
+    print('\nPlease copy your secure password: \n\n\t' +
+          passw+'\n\n!!!  Copy it then use it  !!!\n')
+
 
 # load key from key file
 # and generate key using
@@ -51,12 +67,14 @@ fer = Fernet(key)
 
 while True:
     opt = input(
-        'To add a passsword use "add" and to view old password use "view" q to exit: ').lower()
+        'To add a passsword use "add",\nTo generate password use "gen" ,\nTo view old password use "view" \n ! q to exit: ').lower()
     if opt == 'q':
         break
     if opt == 'add' or opt == 'a':
         add()
     elif opt == 'view' or opt == 'v':
         view()
+    elif opt == 'gen' or opt == 'g':
+        generatepass()
     else:
         continue
