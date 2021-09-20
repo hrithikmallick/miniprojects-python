@@ -1,2 +1,1 @@
-if user_inp not in game:
-    #     continue
+print(decryp(name))
