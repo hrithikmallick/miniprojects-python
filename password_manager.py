@@ -1,5 +1,3 @@
-from sys import path
-
 
 def add():
     name = input('Enter field name: ')
@@ -13,10 +11,12 @@ def view():
     print('\nName | Userid | Password')
     with open('password.txt', 'r') as f:
         for line in f.readlines():
-            print(line)
+            data = line.rstrip()
+            name, userid, password = data.split(' | ')
+            print("Name: "+name+" Userid: "+userid+" Password: "+password)
 
 
-pwm = input('please enter master password ? ')
+pwm = input('Please enter master password ? ')
 
 while True:
     opt = input(
