@@ -54,7 +54,7 @@ def generatepass():
     i = 0
     while i <= 16:
         i += 1
-        rand = random.randrange(0, len(strng))
+        rand = random.randrange(0, len(strng)-1)
         passw += strng[rand]
     print('\nPlease copy your secure password: \n\n\t' +
           passw+'\n\n!!!  Copy it then use it  !!!\n')
