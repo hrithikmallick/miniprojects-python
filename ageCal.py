@@ -1,4 +1,5 @@
 import datetime
+import math
 current_time = datetime.datetime.now()
 
 
@@ -37,13 +38,25 @@ def checkFormat(dob):
     # print(date, month, year)
 
 
-# dob = input("Enter your Date of Birth in this format 'dd/mm/yyyy':- ")
-dob = "18/07/2000"
-# print(checkFormat(dob))
-if checkFormat(dob) != False:
-    dt, mnth, yr = checkFormat(dob)
-    cur_dt = current_time.date
+def ageCalculator(dt, mnth, yr):
+    # calculate the age
+    cur_dt = current_time.day
     cur_mnth = current_time.month
     cur_yr = current_time.year
-    print(dt, mnth, yr)
-    print("You are ", cur_yr-yr, "years age")
+    cur_total = int(cur_yr*365+cur_mnth*30+cur_dt)
+    age_total = int(yr*365+mnth*30+dt)
+    # print(cur_total, age_total, cur_total-age_total)
+    return cur_total-age_total
+
+
+# dob = input("Enter your Date of Birth in this format 'dd/mm/yyyy':- ")
+dob = "18/07/2000"
+if checkFormat(dob) != False:
+    dt, mnth, yr = checkFormat(dob)
+    age = ageCalculator(dt, mnth, yr)
+    age_yr = int(age/365)
+    age = age % 365
+    age_mnth = int(age/30)
+    age = age % 30
+    age_dt = age
+    print("Your age is ", age_yr, "years", age_mnth, "month", age_dt, "days")
