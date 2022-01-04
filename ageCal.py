@@ -25,15 +25,15 @@ def checkFormat(dob):
         print("please use number in DOB")
         return False
 
-    if dt > 31 or dt == 0:
+    if dt > 31 or dt <= 0:
         print("Date is invalid")
         tmp += 1
 
-    if mnth > 12 or mnth == 0:
+    if mnth > 12 or mnth <= 0:
         print("Month is invalid")
         tmp += 1
 
-    if yr > current_time.year or yr == 0:
+    if yr > current_time.year or yr <= 0:
         print("Check the year")
         tmp += 1
     if tmp == 0:
