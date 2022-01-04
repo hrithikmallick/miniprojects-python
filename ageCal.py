@@ -1,5 +1,4 @@
 import datetime
-import math
 current_time = datetime.datetime.now()
 
 # check the format is right or wrong
@@ -67,15 +66,11 @@ def ageCal(dob):
     if checkFormat(dob) != False:
         dt, mnth, yr = checkFormat(dob)
         age = ageCalculator(dt, mnth, yr)
-        age_yr = age/365
-        frac, whole = math.modf(age_yr)
-        age_yr = int(age_yr)
+        age_yr = int(age/365)
         age = age % 365
-        age_mnth = age/30+int(frac*10)
-        frac, whole = math.modf(age_mnth)
-        age_mnth = int(age_mnth)
-        age = age % 30+int(frac*10)
-        age_dt = age
+        age_mnth = int(age/30)
+        age = age % 30
+        age_dt = int(age)
         if age_mnth >= 12:
             age_yr += 1
             age_mnth = age_mnth-12
